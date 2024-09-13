@@ -43,9 +43,13 @@ function displayCard() {
 
 displayCard();
 
+//set variables for buttons in HTML - use DOM to access
 const prevButton = document.getElementById("prev");
 const nextButton = document.getElementById("next");
 const flipButton = document.getElementById("flip");
+
+//When prev button is clicked, use ternary to check if index greater than 0, if so -1 to move to prev card
+//flashcards.length to wrap 1st question back to last, then update displayCard function with new card
 
 prevButton.addEventListener("click", () => {
   currentCardIndex =
@@ -53,12 +57,14 @@ prevButton.addEventListener("click", () => {
   displayCard();
 });
 
+//when next button is clicked, check if index is less than length. If index is less than 0 add 1 then update function
 nextButton.addEventListener("click", () => {
   currentCardIndex =
     currentCardIndex < flashcards.length - 1 ? currentCardIndex + 1 : 0;
   displayCard();
 });
 
+//when flip button clicked change show question function to !, if showing hide answer else hide question
 flipButton.addEventListener("click", () => {
   showingQuestion = !showingQuestion;
   if (showingQuestion) {
@@ -70,21 +76,27 @@ flipButton.addEventListener("click", () => {
   }
 });
 
+//create a variable for the form to add a card and access HTML element 
+
 const newCardForm = document.getElementById("newCardForm");
 
+//when form is submitted, on the event create a variable for new question and answer with the value retrieved
 newCardForm.addEventListener("submit", (event) => {
   event.preventDefault();
 
   const newQuestion = document.getElementById("newQuestion").value;
   const newAnswer = document.getElementById("newAnswer").value;
 
+  //push new variables onto the end of flashcard list 
   flashcards.push({
     question: newQuestion,
     answer: newAnswer,
   });
 
+  // clears form input after submitting new question 
   document.getElementById("newQuestion").value = "";
   document.getElementById("newAnswer").value = "";
 
+  //create an alert to show flashcard has been added, this won't show if input field is blank
   alert("Flashcard added");
 });
