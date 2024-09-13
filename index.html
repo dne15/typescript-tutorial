@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flashcard App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>TypeScript 101 📖</h1>
+    <div class="intro">
+        <h2>Hi there 👋</h2>
+            So I hear you need to learn TypeScript? To follow this tutorial you will need to have a good understanding of Javascript.<br><br>
+
+            By the end of this article, you should: <br>
+            <ul>
+            <input type="checkbox" id="typescript1" name="typescript1" value="Understand what TypeScript is">
+            <label for="typescript1">Understand what TypeScript is</label><br>
+            <input type="checkbox" id="typescript2" name="typescript2" value="Understand why we use it">
+            <label for="typescript2">Understand why we use it</label><br>
+            <input type="checkbox" id="typescript3" name="typescript3" value="Understand the fundamentals">
+            <label for="typescript3">Understand the fundamentals</label><br>
+            <input type="checkbox" id="typescript4" name="typescript4" value="Pass the flashcards below and create some of your own">
+            <label for="typescript4">Pass the flashcards below and create some of your own</label>
+            </ul>
+        </p>
+    </div>
+    <article>
+        <h2>What is TypeScript? 💻</h2>
+    <p>TypeScript is a superset of JavaScript that uses static typing to define types within your JavaScript application. When compiling, TypeScript checks if the types match to help prevent errors within your code.</p>
+    <p>You must declare the type when you write your code as this cannot be changed during the execution of the program.</p>
+
+    <h2>Why do we use it? 🤔</h2>
+    <p>Using types within your JavaScript code adds an additional layer of testing to your application as you can find errors more effectively when compiling. It also allows you to write higher quality and more manageable code.</p>
+    <p>Using type annotations will help improve your code documentation for other developers to see how your code works.</p>
+    <p>If you want to scale your application to a larger size, creating a clear and concise structure will help with managing large codebases.</p>
+    <p>TypeScript also provides better tooling support, such as autocompletion and refactoring.</p>
+
+    <h2>Fundamentals ❗</h2>
+    <p>Once you understand the key Types and Annotations, you will be able to start building your applications within TypeScript as well as updating your current JavaScript projects.</p>
+    <h3>Basic Types</h3>
+    <ul>
+        <li>Number: used for numerical values</li>
+        <li>String: used for text</li>
+        <li>Boolean: used for true/false</li>
+        <li>Array: used for a list of values</li>
+        <li>Tuple: used for arrays with fixed size and types</li>
+        <li>Enum: used for named constants</li>
+        <li>Any: used for any type, however this should be used sparingly as it disables type checking.</li>
+    </ul>
+
+    <h3>Advanced Types</h3>
+    <ul>
+        <li>Union Types: Used when you want a variable to be one of several types</li>
+        <li>Type Aliases: Used to create a new name for a type</li>
+        <li>Generics: Used to create reusable components for any data type.</li>
+    </ul>
+
+    <h3>Type Inference</h3>
+    <p>TypeScript has a feature that can automatically infer the type based on the value that has been assigned. It works by trying to find the best common type that the value can be assigned to by using context.</p>
+    <p>I know what you're thinking, if this exists, why do we need to define types ourselves? Here's why we should explicitly define our types:</p>
+    <ul>
+        <li><strong>Readability & Documentation:</strong> Enhances code clarity and documentation, making it easier for others to understand without needing to infer it from the context themselves.</li>
+        <li><strong>IDE Support:</strong> Improves IDE functionality and support, offering better autocompletion, error checking, and type-related warnings leading to more reliable code development and maintenance.</li>
+        <li><strong>Error Prevention:</strong> Helps avoid unexpected errors that can arise from type inference, especially in complex scenarios or with dynamic values.</li>
+        <li><strong>Integration with Libraries:</strong> Types are essential for integration with external libraries and non-TypeScript environments. This ensures clear interfaces and compatibility.</li>
+        <li><strong>Balance:</strong> Explicit type annotations are crucial for clarity, robustness, tooling support, and error prevention, creating a balanced approach in TypeScript development.</li>
+    </ul>
+
+
+    <h3>Function Parameter Annotations</h3>
+    <p>These are used to specify function parameters and the types of values they expect to receive.</p>
+
+    <h3>Variable Annotations</h3>
+    <p>These are used to define the type of variable used.</p>
+
+    <h3>Interface</h3>
+    <p>These are used to define the shape of an object and specify the properties and methods the object is expected to have. The purpose of an interface is to check types and catch errors during development.</p>
+
+    <div class="wellDone">
+    <h3>Well done!! 🥳</h2>
+    <p>Now is the time to become a TypeScript Expert. Use the flashcards below and add more to the deck to challenge yourself.</p>
+</div>
+</article>
+
+  <div class="container">
+    <div class="flashcard">
+      <div class="question" id="question">Question?</div>
+      <div class="answer" id="answer">Answer</div>
+    </div>
+
+    <div class="controls">
+      <button id="prev">Previous</button>
+      <button id="next">Next</button>
+      <button id="flip">Flip</button>
+    </div>
+
+    <form id="newCardForm">
+      <h3>Add New Flashcard</h3>
+      <input type="text" id="newQuestion" placeholder="Question" required>
+      <input type="text" id="newAnswer" placeholder="Answer" required><br>
+      <button type="submit">Add Card</button>
+    </form>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
